@@ -1,14 +1,12 @@
-<html>
-<head>
-    <title> My first Blog </title>
-</head>
-<body>
-<div>
-    <a href="about/"> ABOUT PAGE </a>
-</div>
-
-<h1> WELCOME! </h1>
-<p> It worked </p>
-
-</body>
-</html>
+{% extends 'blog/base.html' %}
+{% block content %}
+    {% for post in posts %}
+    <div class="post">
+        <div class="date">
+            <p>published: {{ post.published_date }}</p>
+        </div>
+        <h2><a class="point-menu" href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a></h2>
+        <p>{{ post.text|linebreaksbr }}</p>
+    </div>
+    {% endfor %}
+{% endblock %}

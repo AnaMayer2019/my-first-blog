@@ -1,0 +1,66 @@
+h1 a, h2 a {
+    color: #C25100;
+    font-family: 'Lobster';
+}
+
+body {
+    padding-left: 15px;
+}
+
+.page-header h1, .page-header h1 a, .page-header h1 a:visited, .page-header h1 a:active {
+    color: #ffffff;
+    font-size: 36pt;
+    text-decoration: none;
+    padding: 20px;
+    background-color: #C25100;
+}
+
+.content {
+    margin-left: 40px;
+}
+
+h1, h2, h3, h4 {
+    font-family: 'Lobster', cursive;
+}
+
+.date {
+    color: #828282;
+}
+
+.save {
+    float: right;
+}
+
+.post-form textarea, .post-form input {
+    width: 100%;
+}
+
+.top-menu, .top-menu:hover, .top-menu:visited {
+    color: #ffffff;
+    float: right;
+    font-size: 26pt;
+    margin-right: 20px;
+}
+
+.post {
+    margin: 30px 0;
+    border: 1px solid #eeeeee;
+    border-radius: ;
+    padding: 10px;
+}
+
+.point-menu {
+    color: #ff0000;
+}
+
+.point-menu:hover{
+    color: #550000;
+    text-decoration: none;
+}
+
+.post:hover{
+    background-color: #eeeeee;
+    color: #ff00ff;
+    font-style: italic;
+}
+
