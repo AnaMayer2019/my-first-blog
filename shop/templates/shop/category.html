@@ -1,0 +1,67 @@
+{% extends 'shop/index.html' %}
+
+{% block content %}
+<div class="container">
+<h3 class = "category_title">{{c.name}}</h3>
+<div class="row">
+
+    {% for item in c.items_set.all %}
+
+        <div class="col">
+            <div class="card card-dimentions" >
+                <img src="/media/{{item.picture}}" class="card-img-top crop" alt="image" >
+                <div class="card-body">
+                    <h5 class="card-title">{{item.title}}</h5>
+                    <p class="card-text">description</p>
+                    <p class="card-text">Price: $ <span class= {%if item.sale > 0 %} "card-salered" {% else %} "card-salegreen" {%endif%}> {{item.price}} </span></p>
+                    {% if item.sale > 0 %}
+                        <p class="card-salegreen get-new-price"> New Price: $ {{item.get_new_price}} </p>
+                        <p class="card-text">{{item.sale}}% sale !</p>
+                    {% endif %}
+                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter{{item.pk}}">Details</button>
+                    <!-- Button trigger modal -->
+                    <!-- Modal -->
+                    <div class="modal fade" id="exampleModalCenter{{item.pk}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                      <div class="modal-dialog modal-dialog-centered" role="document">
+                        <div class="modal-content">
+                          <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalCenterTitle">{{item.title}}</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                              <span aria-hidden="true">&times;</span>
+                            </button>
+                          </div>
+                          <div class="modal-body">
+                            <img src="/media/{{item.picture}}" class="card-img-top purchase_pic crop" alt="image">
+                              <div style="margin: 30px">
+                                  <p class="card-text">Price: $ <span class= {%if item.sale > 0 %} "card-salered" {% else %} "card-salegreen" {%endif%}> {{item.price}} </span></p>
+                                    {% if item.sale > 0 %}
+                                        <h4 class="card-salegreen get-new-price"> New Price: $ {{item.get_new_price}} </h4>
+                                        <h4 class="card-text">{{item.sale}}% sale !</h4>
+                                    {% endif %}
+
+                                  <div class="dropdown">
+                                      <button type="button" class="btn btn-success dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                          <span class="sr-only">Toggle Dropdown</span>
+                                          BUY </button>
+                                      <div class="dropdown-menu">
+                                          <a class= "dropdown-item" href="">E-mail</a>
+                                          <a class= "dropdown-item" href="">Facebook</a>
+                                      </div>
+                                  </div>
+                              </div>
+                              <div class="clearfix"></div>
+                              <div>{{item.text}}</div>
+                          </div>
+                          <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal"> Favourite </button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    {% endfor %}
+</div>
+</div>
+{% endblock %}

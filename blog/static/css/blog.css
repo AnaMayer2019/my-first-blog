@@ -31,6 +31,76 @@ h1, h2, h3, h4 {
     float: right;
 }
 
+.crop {
+        object-fit: cover;
+        object-position: 50% 0;
+        width: 205px;
+        height: 250px;
+        align: left;
+    }
+
+.card-dimentions{
+    max-width: 205px;
+
+}
+
+.card-salered{
+    margin-block-end: 0em;
+    color: red;
+    text-decoration: line-through;
+    font-weigh: bold;
+
+}
+
+.card-salegreen{
+    margin-block-end: 0em;
+    color: green;
+    font-style: cursive;
+    font-weigh: bold;
+
+}
+
+.category-style{
+    margin: 10px;
+    line-height: 50px;
+    border: 2px dashed black;
+    font-style: italic;
+    background: #C25100;
+
+}
+
+.category_title{
+    margin: 20px auto;
+    font-style: italic;
+    text-decoration: underline;
+    text-decoration-color: orange;
+    text-decoration-style: wavy;
+    text-align: center;
+    padding-button: 20px;
+}
+
+.link-container{
+    display: inline;
+    margin: 10px auto;
+}
+
+.linkz{
+    display: inline-block;
+}
+
+.linkz a {
+    color: white;
+}
+
+
+.purchase_pic{
+    margin: 15px;
+    border: 3px solid #333333
+    border-radius: 30px;
+    float: left;
+
+}
+
 .post-form textarea, .post-form input {
     width: 100%;
 }
@@ -64,3 +134,28 @@ h1, h2, h3, h4 {
     font-style: italic;
 }
 
+.menu-drop:hover{
+
+
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown:hover .dropdown-content {display: block;}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
